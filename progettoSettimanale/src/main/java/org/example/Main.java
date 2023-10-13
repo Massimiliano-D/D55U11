@@ -15,16 +15,25 @@ public class Main {
 
 
         Set<Catalogo> pippoCatalogo = new HashSet<Catalogo>();
-
-        pippoCatalogo.add(lib1);
+        //pippoCatalogo.add(lib1);
         pippoCatalogo.add(lib2);
         pippoCatalogo.add(lib3);
         pippoCatalogo.add(riv1);
         pippoCatalogo.add(riv2);
         pippoCatalogo.add(riv3);
 
+        System.out.println("************NO AGGIUNTA************");
+        System.out.println(pippoCatalogo);
+        System.out.println("************SI AGGIUNTA************");
+        addElem(lib1, pippoCatalogo);
         System.out.println(pippoCatalogo);
     }
 
-
+    static void addElem(Catalogo elem, Set<Catalogo> contenitore) {
+        if (contenitore.add(elem)) {
+            System.out.println("AGGIUNTO CON SUCCESSO!!");
+        } else {
+            System.out.println("ERRORE!!");
+        }
+    }
 }
