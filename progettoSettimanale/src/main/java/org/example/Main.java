@@ -15,16 +15,17 @@ public class Main {
 
 
         Set<Catalogo> pippoCatalogo = new HashSet<Catalogo>();
-        //pippoCatalogo.add(lib1);
+        pippoCatalogo.add(lib1);
         pippoCatalogo.add(lib2);
         pippoCatalogo.add(lib3);
         pippoCatalogo.add(riv1);
         pippoCatalogo.add(riv2);
         pippoCatalogo.add(riv3);
 
-        System.out.println("************NO AGGIUNTA************");
+        System.out.println("************RIMOZIONE************");
+        remElem("932413", pippoCatalogo);
         System.out.println(pippoCatalogo);
-        System.out.println("************SI AGGIUNTA************");
+        System.out.println("************AGGIUNTA************");
         addElem(lib1, pippoCatalogo);
         System.out.println(pippoCatalogo);
     }
@@ -34,6 +35,14 @@ public class Main {
             System.out.println("AGGIUNTO CON SUCCESSO!!");
         } else {
             System.out.println("ERRORE!!");
+        }
+    }
+
+    static void remElem(String Isbm, Set<Catalogo> contenitore) {
+        if (contenitore.removeIf(elm -> elm.getCodiceISBM().equals(Isbm))) {
+            System.out.println("codice:" + " " + Isbm + " " + "ELIMINATO!!");
+        } else {
+            System.out.println("CODICE NON TROVATO!!");
         }
     }
 }
